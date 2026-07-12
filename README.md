@@ -69,7 +69,7 @@ project-budget-manager-python/
 ├── requirements.txt
 ├── .gitignore
 ├── projects.csv
-└── plan.md
+
 ```
 
 ---

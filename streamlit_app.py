@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import os
+from io import BytesIO
 
 def load_projects():
    if os.path.exists("projects.csv"):
@@ -137,3 +138,20 @@ st.subheader("All Projects")
 df = pd.DataFrame(projects)
 
 st.dataframe(df)
+excel_buffer = BytesIO()
+
+with pd.ExcelWriter(excel_buffer, engine="openpyxl") as writer:
+    df.to_excel(
+        writer,
+        index=False,
+        sheet_name="Projects"
+    )
+
+excel_data = excel_buffer.getvalue()
+
+st.download_button(
+    label="Download Projects as Excel",
+    data=excel_data,
+    file_name="project_budgets.xlsx",
+    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+)

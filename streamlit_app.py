@@ -368,14 +368,11 @@ with tab2:
 
                 projects.append(project)
                 save_projects()
-
-                st.success(
-                    f"Project '{clean_project_name}' "
-                    "added successfully!"
+                st.session_state.success_message = (
+                   f"Project '{clean_project_name}' added successfully!"
                 )
 
                 st.rerun()
-
 
 # ==========================================
 # TAB 3: SEARCH PROJECT
@@ -477,7 +474,6 @@ with tab3:
             else:
                 st.error("Project not found.")
 
-
 # ==========================================
 # TAB 4: UPDATE PROJECT
 # ==========================================
@@ -491,23 +487,27 @@ with tab4:
     ]
 
     if project_names:
+
+        selected_project_name = st.selectbox(
+            "Select a project",
+            project_names,
+            key="update_project_select"
+        )
+
+        selected_field = st.selectbox(
+            "Select the field you want to update",
+            available_fields,
+            format_func=lambda field: field_labels[field],
+            key="update_field_select"
+        )
+
         with st.form("update_form"):
-
-            selected_project_name = st.selectbox(
-                "Select a project",
-                project_names
-            )
-
-            selected_field = st.selectbox(
-                "Select the field you want to update",
-                available_fields,
-                format_func=lambda field: field_labels[field]
-            )
 
             if selected_field == "project_name":
                 new_value = st.text_input(
                     "Enter the new project name"
                 )
+
             else:
                 new_value = st.number_input(
                     f"Enter new {field_labels[selected_field]}",
@@ -521,6 +521,7 @@ with tab4:
             )
 
         if update_submit:
+
             if (
                 selected_field == "project_name"
                 and not new_value.strip()
@@ -530,6 +531,7 @@ with tab4:
                 )
 
             elif selected_field == "project_name":
+
                 clean_new_name = new_value.strip()
 
                 existing_names = [
@@ -552,8 +554,7 @@ with tab4:
                             project["project_name"]
                             == selected_project_name
                         ):
-                            project[selected_field] = clean_new_name
-
+                            project["project_name"] = clean_new_name
                             save_projects()
 
                             st.session_state.success_message = (
@@ -570,7 +571,6 @@ with tab4:
                         == selected_project_name
                     ):
                         project[selected_field] = new_value
-
                         save_projects()
 
                         st.session_state.success_message = (
@@ -596,6 +596,7 @@ with tab5:
     ]
 
     if project_names:
+
         with st.form("delete_form"):
 
             project_to_delete = st.selectbox(
@@ -612,24 +613,24 @@ with tab5:
             )
 
         if delete_submit:
+
             if not confirm_delete:
                 st.warning(
-                    "Please confirm that you want "
-                    "to delete this project."
+                    "Please confirm that you want to delete this project."
                 )
 
             else:
+
                 for project in projects:
-                    if (
-                        project["project_name"]
-                        == project_to_delete
-                    ):
+
+                    if project["project_name"] == project_to_delete:
+
                         projects.remove(project)
+
                         save_projects()
 
                         st.session_state.success_message = (
-                            f"Project '{project_to_delete}' "
-                            "deleted successfully."
+                            f"Project '{project_to_delete}' deleted successfully."
                         )
 
                         st.rerun()

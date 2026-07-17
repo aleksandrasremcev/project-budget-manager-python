@@ -1,57 +1,55 @@
 # 📊 Project Budget Manager
 
-![Python](https://img.shields.io/badge/Python-3.14-blue)
-![Streamlit](https://img.shields.io/badge/Framework-Streamlit-red)
-![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-blue)
-![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+![Python](https://img.shields.io/badge/Python-3.14-blue?logo=python)
+![Streamlit](https://img.shields.io/badge/Streamlit-Web_App-red?logo=streamlit)
+![Pandas](https://img.shields.io/badge/Pandas-Data_Analysis-blue?logo=pandas)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-A Python application for managing project budgets, tracking approved and actual project costs, and monitoring project spending. The repository includes both a Command-Line Interface (CLI) version and an interactive Streamlit web application built on the same business logic.
+A Python application for planning, tracking, and analyzing project budgets. The application is available as both a Command Line Interface (CLI) and an interactive Streamlit web application.
 
----
+## 🌐 Live Demo
 
-## 🚀 Features
+**Try the application here:**
 
-- 📊 Interactive dashboard with key budget metrics
-- ➕ Add new projects
-- 🔍 Search projects
-- ✏️ Update project information
-- 🗑️ Delete projects
-- 📈 Compare approved budgets with actual costs using interactive charts
-- 📥 Export project data to Excel
-- 💾 Store project data in CSV format
-- ✅ Prevent duplicate project entries through input validation
+👉 https://project-budget-manager.streamlit.app/
 
 ---
 
-## 🖼️ Application Preview
+## ✨ Features
 
-### Dashboard
+- Create, edit, and delete projects
+- Track approved and actual budgets
+- Automatic budget variance calculation
+- Interactive dashboard with KPIs
+- Spending visualization using charts
+- CSV data storage
+- Export project data to Excel
+- User-friendly Streamlit interface
+- Command Line Interface (CLI) version
+
+---
+
+## 📷 Application Preview
 
 ![Dashboard](images/dashboard.png)
 
 ---
 
-## 📌 Project Versions
+## 🖥️ Project Versions
 
-This repository contains two implementations of the Project Budget Manager.
+### Streamlit Web Application
 
-### 🖥️ CLI Version (`app.py`)
+Interactive version with:
 
-A command-line application implementing the core project budget management logic, including:
-
-- Create, update and delete projects
-- Budget tracking
-- CSV data storage
-
-### 🌐 Streamlit Web Version (`streamlit_app.py`)
-
-A modern web application featuring:
-
-- Interactive dashboard
-- Budget visualization
-- CRUD operations
+- Dashboard
+- Charts
+- Project management
 - Excel export
-- User-friendly interface
+- Responsive interface
+
+### Command Line Application
+
+A terminal-based version demonstrating the same core functionality using Python.
 
 ---
 
@@ -66,38 +64,34 @@ A modern web application featuring:
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Structure
 
-```text
+```
 project-budget-manager-python/
 │
+├── streamlit_app.py
+├── app.py
+├── requirements.txt
+├── projects.csv
 ├── images/
 │   └── dashboard.png
-├── app.py
-├── streamlit_app.py
-├── projects.csv
-├── requirements.txt
 ├── README.md
-└── .gitignore
+└── LICENSE
 ```
 
 ---
 
-## ⚙️ Installation
+## 🚀 Installation
 
 Clone the repository:
 
 ```bash
 git clone https://github.com/aleksandrasremcev/project-budget-manager-python.git
-```
 
-Navigate to the project folder:
-
-```bash
 cd project-budget-manager-python
 ```
 
-Install the required packages:
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -105,15 +99,15 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ Running the Application
-
-### Streamlit Version
+## ▶️ Run the Streamlit App
 
 ```bash
 streamlit run streamlit_app.py
 ```
 
-### CLI Version
+---
+
+## 💻 Run the CLI Version
 
 ```bash
 python app.py
@@ -121,33 +115,30 @@ python app.py
 
 ---
 
-## 📊 Dashboard Overview
+## 📈 Dashboard Overview
 
-The Streamlit dashboard provides a quick overview of all projects, including:
+The dashboard provides:
 
 - Total number of projects
 - Total approved budget
-- Total actual costs
-- Remaining budget
+- Total actual budget
+- Budget variance
 - Budget comparison chart
-- Complete project table
+- Spending distribution by project
 
 ---
 
 ## 🎯 Key Skills Demonstrated
 
-This project demonstrates practical experience with:
-
 - Python programming
-- Data structures (lists and dictionaries)
-- CSV file handling
-- Data analysis using Pandas
-- Interactive web application development with Streamlit
-- CRUD (Create, Read, Update, Delete) operations
-- Data validation
-- Dashboard creation and data visualization
-- Excel export with OpenPyXL
-- Version control using Git and GitHub
+- Data manipulation with Pandas
+- Interactive web applications using Streamlit
+- Data visualization
+- CRUD operations
+- File handling (CSV & Excel)
+- Git & GitHub version control
+- Project documentation
+- Software deployment
 
 ---
 
@@ -155,4 +146,11 @@ This project demonstrates practical experience with:
 
 **Aleksandra Sremcev**
 
-GitHub: https://github.com/aleksandrasremcev
+GitHub:
+https://github.com/aleksandrasremcev
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.

@@ -5,20 +5,21 @@
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-blue)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
-A web application built with **Python** and **Streamlit** for managing project budgets, tracking approved and actual costs, and monitoring project spending through an interactive dashboard.
+A Python application for managing project budgets, tracking approved and actual project costs, and monitoring project spending. The repository includes both a Command-Line Interface (CLI) version and an interactive Streamlit web application built on the same business logic.
 
 ---
 
 ## 🚀 Features
 
-- 📊 Interactive dashboard with key project metrics
+- 📊 Interactive dashboard with key budget metrics
 - ➕ Add new projects
-- 🔍 Search existing projects
+- 🔍 Search projects
 - ✏️ Update project information
 - 🗑️ Delete projects
-- 📈 Compare approved budgets with actual costs using charts
+- 📈 Compare approved budgets with actual costs using interactive charts
 - 📥 Export project data to Excel
 - 💾 Store project data in CSV format
+- ✅ Prevent duplicate project entries through input validation
 
 ---
 
@@ -30,12 +31,38 @@ A web application built with **Python** and **Streamlit** for managing project b
 
 ---
 
-## 🛠️ Built With
+## 📌 Project Versions
+
+This repository contains two implementations of the Project Budget Manager.
+
+### 🖥️ CLI Version (`app.py`)
+
+A command-line application implementing the core project budget management logic, including:
+
+- Create, update and delete projects
+- Budget tracking
+- CSV data storage
+
+### 🌐 Streamlit Web Version (`streamlit_app.py`)
+
+A modern web application featuring:
+
+- Interactive dashboard
+- Budget visualization
+- CRUD operations
+- Excel export
+- User-friendly interface
+
+---
+
+## 🛠️ Technologies Used
 
 - Python
 - Streamlit
 - Pandas
 - OpenPyXL
+- Git
+- GitHub
 
 ---
 
@@ -46,6 +73,7 @@ project-budget-manager-python/
 │
 ├── images/
 │   └── dashboard.png
+├── app.py
 ├── streamlit_app.py
 ├── projects.csv
 ├── requirements.txt
@@ -75,17 +103,27 @@ Install the required packages:
 pip install -r requirements.txt
 ```
 
-Run the application:
+---
+
+## ▶️ Running the Application
+
+### Streamlit Version
 
 ```bash
 streamlit run streamlit_app.py
 ```
 
+### CLI Version
+
+```bash
+python app.py
+```
+
 ---
 
-## 📋 Dashboard Overview
+## 📊 Dashboard Overview
 
-The dashboard provides an overview of all projects and includes:
+The Streamlit dashboard provides a quick overview of all projects, including:
 
 - Total number of projects
 - Total approved budget
@@ -96,33 +134,20 @@ The dashboard provides an overview of all projects and includes:
 
 ---
 
-## 📊 Project Management
+## 🎯 Key Skills Demonstrated
 
-The application allows users to:
+This project demonstrates practical experience with:
 
-- Create new projects
-- Track approved and actual costs across six budget categories
-- Search for projects by name
-- Update project information
-- Delete projects
-- Export all project data to Excel
-
----
-
-## 🎯 Learning Objectives
-
-This project was created to strengthen practical Python development skills while learning how to build interactive web applications.
-
-Key concepts practiced include:
-
-- Object and data management using dictionaries and lists
-- Reading and writing CSV files with Pandas
-- Building interactive user interfaces with Streamlit
-- Creating dashboards and charts
-- Implementing CRUD (Create, Read, Update, Delete) functionality
+- Python programming
+- Data structures (lists and dictionaries)
+- CSV file handling
+- Data analysis using Pandas
+- Interactive web application development with Streamlit
+- CRUD (Create, Read, Update, Delete) operations
 - Data validation
-- Exporting data to Excel
-- Using Git and GitHub for version control
+- Dashboard creation and data visualization
+- Excel export with OpenPyXL
+- Version control using Git and GitHub
 
 ---
 
